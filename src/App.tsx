@@ -1,16 +1,18 @@
-import React, {useContext} from 'react';
+import React, {FC, useContext} from 'react';
 import {BrowserRouter} from 'react-router-dom'
 import Navbar from "./components/Navbar";
 import AppRouter from "./components/AppRouter";
 import './App.css'
-import {Context} from "./index";
+import {Context, GlobalContent} from "./index";
 import Loader from "./components/Loader";
 import {useAuthState} from "react-firebase-hooks/auth";
+import Headers from "./components/layout/Headers";
 
-const App = () => {
+const App: FC = () => {
+
+  const {auth} = useContext<GlobalContent>(Context)
   // @ts-ignore
-  const {auth} = useContext(Context)
-  const [user, loading, error] = useAuthState(auth)
+    const [user, loading, error] = useAuthState(auth)
 
   if (loading) {
     return <Loader/>
@@ -18,8 +20,9 @@ const App = () => {
 
   return (
       <BrowserRouter>
-          <Navbar/>
-          <AppRouter/>
+          <Headers>
+              <AppRouter/>
+          </Headers>
       </BrowserRouter>
   );
 };

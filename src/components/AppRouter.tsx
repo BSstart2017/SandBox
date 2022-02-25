@@ -6,15 +6,14 @@ import {privateRoutes, publicRoutes} from "../utils/routes";
 import {useAuthState} from "react-firebase-hooks/auth";
 
 const AppRouter = () => {
-    // @ts-ignore
     const {auth} = useContext(Context)
+    // @ts-ignore
     const [user] = useAuthState(auth)
 
     return user ?
         (
             <Switch>
                 {privateRoutes.map(({path, Component}) =>
-                    // @ts-ignore
                     <Route key={path} path={path} component={Component} exact={true}/>
                 )}
                 <Redirect to={SHOP_ROUTE}/>
@@ -24,7 +23,6 @@ const AppRouter = () => {
         (
             <Switch>
                 {publicRoutes.map(({path, Component}) =>
-                    // @ts-ignore
                     <Route key={path} path={path} component={Component} exact={true}/>
                 )}
                 <Redirect to={LOGIN_ROUTE}/>

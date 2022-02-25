@@ -18,20 +18,21 @@ firebase.initializeApp({
     }
 );
 
-export const Context = createContext(null)
-
 const auth = firebase.auth()
 const firestore = firebase.firestore()
 
-console.log(auth)
-console.log(firestore)
-// @ts-ignore
-ReactDOM.render( <Context.Provider value={{
-        firebase,
-        auth,
-        firestore
-    }}>
+export const Context = createContext<GlobalContent>({firebase, auth, firestore})
+
+ReactDOM.render(
+    <Context.Provider value={{firebase, auth, firestore}}>
         <App />
     </Context.Provider>,
     document.getElementById('root')
 );
+
+
+export type GlobalContent = {
+    auth : firebase.auth.Auth
+    firestore : firebase.firestore.Firestore
+    firebase: typeof firebase
+}

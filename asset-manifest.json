@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/SandBoxOnline/static/css/main.38763475.css",
+    "main.js": "/SandBoxOnline/static/js/main.0ad1cb2a.js",
+    "index.html": "/SandBoxOnline/index.html",
+    "main.38763475.css.map": "/SandBoxOnline/static/css/main.38763475.css.map",
+    "main.0ad1cb2a.js.map": "/SandBoxOnline/static/js/main.0ad1cb2a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.38763475.css",
+    "static/js/main.0ad1cb2a.js"
+  ]
+}

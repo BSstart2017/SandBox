@@ -1,6 +1,5 @@
 {
   "name": "my-app",
-  "homepage": "https://bsstart2017.github.io/SandBox",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

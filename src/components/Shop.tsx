@@ -1,6 +1,8 @@
 import React, {FC, useEffect, useState} from 'react'
 import {Button} from "@material-ui/core";
 import axios from "axios";
+import {Redirect} from "react-router-dom";
+import {SHOP_ROUTE} from "../utils/contacts";
 
 const Shop: FC = () => {
 
@@ -36,11 +38,8 @@ const Shop: FC = () => {
 
     const instance = axios.create({
         headers: {
-            "Access-Control-Allow-Origin": "https://bsstart2017.github.io",
-            "Access-Control-Allow-Headers": "X-Requested-With",
-            "Access-Control-Allow-Methods": "GET, POST, PUT",
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${tokenData?.access_token}`
+             "Content-Type": "application/x-www-form-urlencoded",
+             "Authorization": `Bearer ${tokenData?.access_token}`
         },
         baseURL: 'https://secure.snd.payu.com/'
     })
